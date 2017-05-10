@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script>
+   function  create(){
+     var results=new Array();
+	 for(var i=0;i<10;i++){
+		 
+	   results[i]=function(){
+	     return i;
+	   }
+	 }
+	 return results;
+   }
+   function  create2(){
+     var results=new Array();
+	 for(var i=0;i<10;i++){
+		 
+	   results[i]=function(num){
+	     //return i;
+		 return function(){
+		   return num;
+		 }
+	   }(i);
+	 }
+	 return results;
+   }
+   var a=create2();
+   alert((a[2])());
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>
